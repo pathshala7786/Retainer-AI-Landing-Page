@@ -21,6 +21,11 @@ const teko = Teko({
 export const metadata: Metadata = {
   title: "Retainer AI - Professional Social Media Analytics",
   description: "AI Analysis & Captions for Social Media Creators. Data-driven insights to grow your profile.",
+  icons: {
+    icon: "/assets/logo-main.png",
+    shortcut: "/assets/logo-main.png",
+    apple: "/assets/logo-main.png",
+  }
 };
 
 export default function RootLayout({
