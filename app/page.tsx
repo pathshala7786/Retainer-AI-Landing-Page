@@ -239,6 +239,7 @@ export default function Home() {
             </p>
 
             <form
+              id="waitlist"
               ref={formRef}
               className="flex flex-col sm:flex-row gap-4 w-full max-w-lg items-center relative z-20"
               onSubmit={handleSubmit}

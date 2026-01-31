@@ -21,14 +21,16 @@ const Navbar = () => {
                 </Link>
 
                 <div className="hidden md:flex items-center gap-8 text-white/70 font-medium text-sm">
-                    <Link href="#features" className="hover:text-white transition-colors">Features</Link>
-                    <Link href="#pricing" className="hover:text-white transition-colors">Pricing</Link>
-                    <Link href="#about" className="hover:text-white transition-colors">About</Link>
+                    <Link href="/#features" className="hover:text-white transition-colors">Features</Link>
+                    <Link href="/#pricing" className="hover:text-white transition-colors">Pricing</Link>
+                    <Link href="/about" className="hover:text-white transition-colors">About</Link>
                 </div>
 
-                <Button variant="secondary" className="!py-2 !px-5 !text-xs !bg-white/5 !border-white/10 hover:!bg-white/20 whitespace-nowrap">
-                    Join Waitlist
-                </Button>
+                <Link href="/#waitlist">
+                    <Button variant="secondary" className="!py-2 !px-5 !text-xs !bg-white/5 !border-white/10 hover:!bg-white/20 whitespace-nowrap">
+                        Join Waitlist
+                    </Button>
+                </Link>
             </div>
         </nav>
     );
