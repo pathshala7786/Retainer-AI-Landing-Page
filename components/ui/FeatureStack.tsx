@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LucideIcon } from 'lucide-react';
+import PhoneMockup from './PhoneMockup';
 
 interface Feature {
     id: number;
@@ -29,75 +30,109 @@ const FeatureStack: React.FC<FeatureStackProps> = ({ features }) => {
         });
     };
 
+    const activeFeature = cards[0];
+
     return (
-        <div className="relative w-full max-w-md mx-auto h-[500px] flex items-center justify-center">
-            {/* Stack Container */}
-            <div
-                className="relative w-full h-full cursor-pointer group"
-                onClick={moveFrontToBack}
-            >
-                <AnimatePresence mode='popLayout'>
-                    {cards.map((feature, index) => {
-                        // Only render top 3 cards for performance/visuals matches "stack" snippet logic
-                        if (index > 2) return null;
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24 w-full max-w-6xl mx-auto px-4">
+            {/* Left Content Area: Dynamic Text */}
+            <div className="flex-1 w-full text-left lg:max-w-md">
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={activeFeature.id}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 20 }}
+                        transition={{ duration: 0.3 }}
+                        className="space-y-6"
+                    >
+                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center border border-pink-500/30 shadow-[0_0_20px_rgba(236,72,153,0.2)]">
+                            <activeFeature.icon className="text-pink-400" size={32} />
+                        </div>
 
-                        return (
-                            <motion.div
-                                layoutId={`card-${feature.id}`}
-                                key={feature.id}
-                                initial={false}
-                                animate={{
-                                    scale: 1 - index * 0.05,
-                                    y: index * 15,
-                                    zIndex: cards.length - index,
-                                    opacity: 1 - index * 0.2,
-                                }}
-                                exit={{
-                                    scale: 0.9,
-                                    opacity: 0
-                                }}
-                                transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                                className={`
-                  absolute top-0 left-0 w-full h-full 
-                  rounded-3xl border border-white/10 
-                  bg-[#0A0A0A] backdrop-blur-xl 
-                  shadow-[0_0_30px_rgba(0,0,0,0.5)]
-                  overflow-hidden flex flex-col
-                  ${index === 0 ? 'shadow-[0_0_50px_rgba(236,72,153,0.15)] ring-1 ring-white/10' : ''}
-                `}
-                            >
-                                {/* Card Body logic from user request */}
+                        <div className="space-y-4">
+                            <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight tracking-tight">
+                                {activeFeature.title}
+                            </h3>
+                            <p className="text-lg md:text-xl text-slate-400 leading-relaxed font-light">
+                                {activeFeature.description}
+                            </p>
+                        </div>
 
-                                <div className="relative h-1/2 w-full bg-gradient-to-br from-white/5 to-transparent">
-                                    <Image
-                                        src={feature.imageSrc}
-                                        alt={feature.title}
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, 448px"
-                                        className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                                    />
-                                    <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
-                                </div>
-
-                                {/* Content Area */}
-                                <div className="p-8 flex flex-col flex-1 relative">
-                                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center border border-pink-500/30 mb-4 shadow-[0_0_15px_rgba(236,72,153,0.2)]">
-                                        <feature.icon className="text-pink-400" size={24} />
-                                    </div>
-
-                                    <h3 className="text-2xl font-bold text-white mb-2">{feature.title}</h3>
-                                    <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
-                                        {feature.description}
-                                    </p>
-
-                                    <div className="mt-auto pt-6 flex items-center gap-2 text-xs font-mono text-purple-400 uppercase tracking-widest opacity-60">
-                                        <span>Tap for next</span>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        );
-                    })}
+                        <div className="pt-4 flex items-center gap-3 text-xs font-mono text-pink-500/60 uppercase tracking-[0.3em]">
+                            <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" />
+                            <span>Interactive Live Demo</span>
+                        </div>
+                    </motion.div>
                 </AnimatePresence>
+            </div>
+
+            {/* Right Stack Area: Phone Mockup */}
+            <div className="relative w-full max-w-[340px] md:max-w-md h-[750px] md:h-[850px] flex items-center justify-center">
+                {/* Stack Container */}
+                <div
+                    className="relative w-full h-full cursor-pointer group"
+                    onClick={moveFrontToBack}
+                >
+                    <AnimatePresence mode='popLayout'>
+                        {cards.map((feature, index) => {
+                            // Only render top 3 cards for performance/visuals
+                            if (index > 2) return null;
+
+                            return (
+                                <motion.div
+                                    layoutId={`card-${feature.id}`}
+                                    key={feature.id}
+                                    initial={false}
+                                    animate={{
+                                        scale: 1 - index * 0.05,
+                                        y: index * 10,
+                                        zIndex: (cards.length - index) * 10,
+                                        opacity: 1 - index * 0.2,
+                                    }}
+                                    exit={{
+                                        scale: 0.8,
+                                        opacity: 0,
+                                        x: -150,
+                                        rotate: -15
+                                    }}
+                                    transition={{ type: "spring", stiffness: 200, damping: 25 }}
+                                    className={`
+                                        absolute top-0 left-0 w-full aspect-[462/978]
+                                        rounded-[3rem] overflow-hidden
+                                        ${index === 0 ? 'shadow-[0_0_80px_rgba(236,72,153,0.3)]' : 'shadow-2xl'}
+                                    `}
+                                >
+                                    <PhoneMockup
+                                        borderColor={index === 0 ? "#ec4899" : "#333"}
+                                        className="w-full h-full"
+                                        showCamera={false}
+                                    >
+                                        <div className="relative w-full h-full">
+                                            <Image
+                                                src={feature.imageSrc}
+                                                alt={feature.title}
+                                                fill
+                                                priority={index === 0}
+                                                className="object-cover object-top scale-[1.18]"
+                                                sizes="(max-width: 768px) 100vw, 384px"
+                                            />
+
+                                            {/* Subtle Gradient to soften hard edges if any */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+
+                                            {/* Next Indicator */}
+                                            {index === 0 && (
+                                                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 px-4 py-2 bg-black/40 backdrop-blur-md rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <span className="text-[10px] uppercase tracking-widest text-white/70">Tap to Next</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </PhoneMockup>
+                                </motion.div>
+                            );
+                        })}
+                    </AnimatePresence>
+                </div>
             </div>
         </div>
     );

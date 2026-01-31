@@ -87,7 +87,7 @@ body {
   border: 5px solid #6b6b6b;
   border-radius: 65px;
   background-color: #000;
-  padding: 6px;
+  padding: 0px;
   overflow: hidden;
   width: 100%;
   max-width: 462px;
@@ -106,7 +106,7 @@ body {
 }
 
 .mockup-phone-display {
-  border-radius: 54px;
+  border-radius: 60px;
   grid-column: 1/1;
   grid-row: 1/1;
   overflow: hidden;

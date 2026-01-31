@@ -9,7 +9,7 @@ import Input from '../components/ui/Input';
 import PhoneMockup from '../components/ui/PhoneMockup';
 import FeatureStack from '../components/ui/FeatureStack';
 import Image from 'next/image';
-import { ArrowRight, BarChart2, MessageSquare, TrendingUp, Sparkles, CheckCircle2, Zap, Target, Users, Wand2, ShieldCheck } from 'lucide-react';
+import { ArrowRight, BarChart2, MessageSquare, TrendingUp, Sparkles, CheckCircle2, Zap, Target, Users, Wand2, ShieldCheck, Library } from 'lucide-react';
 
 export default function Home() {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -287,9 +287,9 @@ export default function Home() {
 
             {/* Video Preview / Phone Mockup */}
             <div className="mt-20 relative w-full max-w-md mx-auto">
-              <PhoneMockup borderColor="#a855f7">
+              <PhoneMockup borderColor="#a855f7" showCamera={true}>
                 <Image
-                  src="/assets/screenshots/Screenshot_20260131_134015.jpg"
+                  src="/assets/reports/Main Dashboard.jpg"
                   alt="App Dashboard"
                   fill
                   sizes="(max-width: 768px) 100vw, 462px"
@@ -310,9 +310,9 @@ export default function Home() {
               <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-pink-500/50 to-transparent -translate-x-1/2" />
 
               <div className="order-2 md:order-1 relative z-10">
-                <PhoneMockup borderColor="#ec4899">
+                <PhoneMockup borderColor="#ec4899" showCamera={false}>
                   <Image
-                    src="/assets/reports/Main Dashboard.jpg"
+                    src="/assets/reports/Social Sync Dashboard.jpg"
                     alt="AI Analytics Dashboard"
                     fill
                     sizes="(max-width: 768px) 100vw, 462px"
@@ -347,29 +347,29 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Feature 2: Captions */}
+            {/* Feature 2: Strategic Library */}
             <div className="grid md:grid-cols-2 gap-20 items-center relative">
               <div className="space-y-8 relative z-10 pr-8">
-                <div className="inline-block p-4 rounded-2xl bg-gradient-to-br from-purple-500/10 to-transparent border border-purple-500/20">
-                  <Wand2 size={32} className="text-purple-500" />
+                <div className="inline-block p-4 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-transparent border border-indigo-500/20">
+                  <Library size={32} className="text-indigo-500" />
                 </div>
                 <div>
-                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Data-Driven Captions</h2>
+                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Strategic Asset Library</h2>
                   <p className="text-lg text-slate-400 leading-relaxed">
-                    Generate captions that are mathematically proven to increase reach and saves, designed specifically for your brand voice.
+                    Access your personalized vault of high-performance frameworks. Store, organize, and deploy battle-tested content blocks that resonate with your specific audience.
                   </p>
                 </div>
 
                 <Button variant="secondary" className="gap-3 group">
-                  Generate Magic Captions <Sparkles size={18} className="text-purple-400 group-hover:rotate-12 transition-transform" />
+                  Explore Strategy Hub <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
 
               <div className="relative z-10">
-                <PhoneMockup borderColor="#a855f7">
+                <PhoneMockup borderColor="#6366f1" showCamera={false}>
                   <Image
-                    src="/assets/reports/Engagement Forecast.jpg"
-                    alt="Caption Generator"
+                    src="/assets/reports/Strategic Library.jpg"
+                    alt="Strategic Asset Library"
                     fill
                     sizes="(max-width: 768px) 100vw, 462px"
                     className="object-cover object-top scale-105 hover:scale-100 transition-transform duration-700"
@@ -394,75 +394,58 @@ export default function Home() {
               See how Retainer AI transforms raw data into growth strategies.
             </p>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-20">
-              <div className="flex-1 text-left space-y-8 max-w-xl">
-                <div className="space-y-4">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-pink-300">
-                    <Sparkles size={12} />
-                    <span>Feature Stack</span>
-                  </div>
-                  <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-                    Everything you need to <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">Go Viral</span>
-                  </h3>
-                  <p className="text-lg text-slate-400">
-                    Tap through our powerful suite of growth tools designed to maximize your reach.
-                  </p>
-                </div>
-              </div>
-
-              <div className="w-full max-w-md">
-                <FeatureStack features={[
-                  {
-                    id: 1,
-                    title: "Audit Intelligence",
-                    description: "Get real-time scoring for Viral Potential, Hook Strength, and Aesthetic Quality. Our AI dissects your content to ensure it meets the 2026 algorithm standards.",
-                    icon: ShieldCheck,
-                    imageSrc: "/assets/reports/A1.jpg"
-                  },
-                  {
-                    id: 2,
-                    title: "Strategy Framework",
-                    description: "Receive tailored platform intel and creator tips. Understand why specific 'Aesthetic POV' frameworks out-perform traditional educational content.",
-                    icon: Target,
-                    imageSrc: "/assets/reports/A2.jpg"
-                  },
-                  {
-                    id: 3,
-                    title: "Acoustic Engine",
-                    description: "Analyze audio energy and vocal clarity. Sync your voiceover transitions perfectly to visual cues for maximum emotional impact.",
-                    icon: Zap,
-                    imageSrc: "/assets/reports/A3.jpg"
-                  },
-                  {
-                    id: 4,
-                    title: "Cinematography Analysis",
-                    description: "Optimize shot selection and color science. Transition from close-ups to wide angles to create a sense of expanding spiritual and physical space.",
-                    icon: Sparkles,
-                    imageSrc: "/assets/reports/A4.jpg"
-                  },
-                  {
-                    id: 5,
-                    title: "Smart Captions",
-                    description: "Generate viral hooks that stop the scroll. Choose from Viral, Educational, or Minimalist styles tailored for the Ramadan 2026 season.",
-                    icon: MessageSquare,
-                    imageSrc: "/assets/reports/A5.jpg"
-                  },
-                  {
-                    id: 6,
-                    title: "Hashtag Laboratory",
-                    description: "Access niche-optimized tags and identify your daily 'Viral Slot'. Post at the exact minute your audience is most likely to engage.",
-                    icon: TrendingUp,
-                    imageSrc: "/assets/reports/A6.jpg"
-                  },
-                  {
-                    id: 7,
-                    title: "Meta Strategy",
-                    description: "Double down on 'Save-Worthy' aesthetics. Plan countdown reels and series that get progressively more detailed as your event approaches.",
-                    icon: BarChart2,
-                    imageSrc: "/assets/reports/A7.jpg"
-                  }
-                ]} />
-              </div>
+            <div className="w-full">
+              <FeatureStack features={[
+                {
+                  id: 1,
+                  title: "Audit Intelligence",
+                  description: "Get real-time scoring for Viral Potential, Hook Strength, and Aesthetic Quality. Our AI dissects your content to ensure it meets the 2026 algorithm standards.",
+                  icon: ShieldCheck,
+                  imageSrc: "/assets/reports/A1.jpg"
+                },
+                {
+                  id: 2,
+                  title: "Strategy Framework",
+                  description: "Receive tailored platform intel and creator tips. Understand why specific 'Aesthetic POV' frameworks out-perform traditional educational content.",
+                  icon: Target,
+                  imageSrc: "/assets/reports/A2.jpg"
+                },
+                {
+                  id: 3,
+                  title: "Acoustic Engine",
+                  description: "Analyze audio energy and vocal clarity. Sync your voiceover transitions perfectly to visual cues for maximum emotional impact.",
+                  icon: Zap,
+                  imageSrc: "/assets/reports/A3.jpg"
+                },
+                {
+                  id: 4,
+                  title: "Cinematography Analysis",
+                  description: "Optimize shot selection and color science. Transition from close-ups to wide angles to create a sense of expanding spiritual and physical space.",
+                  icon: Sparkles,
+                  imageSrc: "/assets/reports/A4.jpg"
+                },
+                {
+                  id: 5,
+                  title: "Smart Captions",
+                  description: "Generate viral hooks that stop the scroll. Choose from Viral, Educational, or Minimalist styles tailored for the Ramadan 2026 season.",
+                  icon: MessageSquare,
+                  imageSrc: "/assets/reports/A5.jpg"
+                },
+                {
+                  id: 6,
+                  title: "Hashtag Laboratory",
+                  description: "Access niche-optimized tags and identify your daily 'Viral Slot'. Post at the exact minute your audience is most likely to engage.",
+                  icon: TrendingUp,
+                  imageSrc: "/assets/reports/A6.jpg"
+                },
+                {
+                  id: 7,
+                  title: "Meta Strategy",
+                  description: "Double down on 'Save-Worthy' aesthetics. Plan countdown reels and series that get progressively more detailed as your event approaches.",
+                  icon: BarChart2,
+                  imageSrc: "/assets/reports/A7.jpg"
+                }
+              ]} />
             </div>
           </div>
         </section>
