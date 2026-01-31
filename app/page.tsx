@@ -205,7 +205,7 @@ export default function Home() {
         <Navbar />
 
         {/* Hero Section */}
-        <section id="waitlist" className="relative w-full flex flex-col items-center justify-center min-h-screen z-10 pt-40 pb-20">
+        <section className="relative w-full flex flex-col items-center justify-center min-h-screen z-10 pt-40 pb-20">
           {/* Ambient Glows with Anime.js */}
           <div
             ref={glow1Ref}
@@ -238,7 +238,11 @@ export default function Home() {
               Stop guessing. Let AI analyze your profile and generate high-converting captions based on real data.
             </p>
 
+            {/* Anchor for scrolling */}
+            <div id="waitlist" className="scroll-mt-32" />
+
             <form
+              id="waitlist-form"
               ref={formRef}
               className="flex flex-col sm:flex-row gap-4 w-full max-w-lg items-center relative z-20"
               onSubmit={handleSubmit}

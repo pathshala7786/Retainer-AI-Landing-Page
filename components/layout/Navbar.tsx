@@ -26,10 +26,17 @@ const Navbar = () => {
                     <Link href="/about" className="hover:text-white transition-colors">About</Link>
                 </div>
 
-                <Link href="/#waitlist">
-                    <Button variant="secondary" className="!py-2 !px-5 !text-xs !bg-white/5 !border-white/10 hover:!bg-white/20 whitespace-nowrap">
-                        Join Waitlist
-                    </Button>
+                <Link
+                    href="/#waitlist"
+                    className="btn-secondary !py-2 !px-5 !text-xs !bg-white/5 !border-white/10 hover:!bg-white/20 whitespace-nowrap inline-flex items-center justify-center rounded-full transition-all"
+                    onClick={(e) => {
+                        if (window.location.pathname === '/') {
+                            e.preventDefault();
+                            document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }}
+                >
+                    Join Waitlist
                 </Link>
             </div>
         </nav>
