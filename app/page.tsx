@@ -278,7 +278,7 @@ export default function Home() {
 
             <div className="mt-8 text-sm text-slate-400 flex items-center gap-4 group">
               <div className="flex -space-x-3 items-center">
-                {[1, 2, 3].map(i => (
+                {[1, 2, 3, 4, 5, 6, 7].map(i => (
                   <div key={i} className="relative w-8 h-8 rounded-full border-2 border-black overflow-hidden ring-2 ring-pink-500/10 group-hover:ring-pink-500/30 transition-all duration-500">
                     <Image
                       src={`/assets/users/avatar${i}.png`}
