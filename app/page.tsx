@@ -284,6 +284,7 @@ export default function Home() {
                       src={`/assets/users/avatar${i}.png`}
                       alt={`Creator ${i}`}
                       fill
+                      sizes="32px"
                       className="object-cover"
                     />
                   </div>
@@ -300,6 +301,7 @@ export default function Home() {
                   alt="App Dashboard"
                   fill
                   sizes="(max-width: 768px) 100vw, 462px"
+                  priority
                   className="object-cover object-top"
                 />
               </PhoneMockup>

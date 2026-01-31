@@ -18,6 +18,7 @@ const Navbar = () => {
                                 src="/assets/logo-main.png"
                                 alt="Retainer AI Logo"
                                 fill
+                                sizes="32px"
                                 className="object-contain"
                                 priority
                             />
