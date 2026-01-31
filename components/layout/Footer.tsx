@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Footer = () => {
     return (
@@ -8,9 +9,8 @@ const Footer = () => {
                     © {new Date().getFullYear()} Retainer AI. All rights reserved.
                 </div>
                 <div className="flex gap-8 text-slate-500 text-sm">
-                    <a href="#" className="hover:text-pink-500 transition-colors">Privacy Policy</a>
-                    <a href="#" className="hover:text-pink-500 transition-colors">Terms of Service</a>
-                    <a href="#" className="hover:text-pink-500 transition-colors">Instagram</a>
+                    <Link href="/privacy" className="hover:text-pink-500 transition-colors">Privacy Policy</Link>
+                    <Link href="/terms" className="hover:text-pink-500 transition-colors">Terms of Service</Link>
                 </div>
             </div>
         </footer>

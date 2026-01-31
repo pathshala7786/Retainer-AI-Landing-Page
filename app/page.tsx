@@ -378,7 +378,7 @@ export default function Home() {
         </section>
 
         {/* Data/Showcase Grid */}
-        <section className="py-32 relative text-center">
+        <section id="pricing" className="py-32 relative text-center">
           {/* Background Glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none" />
 
@@ -436,7 +436,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-32 relative overflow-hidden">
+        <section id="about" className="py-32 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-pink-900/20" />
 
           <div className="max-w-4xl mx-auto px-6 relative z-10">
@@ -453,7 +453,7 @@ export default function Home() {
                   Ready to dominate <br /> your niche?
                 </h2>
                 <p className="text-xl text-slate-300 max-w-xl mx-auto">
-                  Join the exclusive waitlist and be the first to access the future of Instagram growth.
+                  Join the exclusive waitlist and be the first to access the future of Social Media growth.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">

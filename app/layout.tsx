@@ -17,8 +17,8 @@ const teko = Teko({
 });
 
 export const metadata: Metadata = {
-  title: "Retainer AI - Professional Instagram Analytics",
-  description: "AI Analysis & Captions for Instagram Creators. Data-driven insights to grow your profile.",
+  title: "Retainer AI - Professional Social Media Analytics",
+  description: "AI Analysis & Captions for Social Media Creators. Data-driven insights to grow your profile.",
 };
 
 export default function RootLayout({
