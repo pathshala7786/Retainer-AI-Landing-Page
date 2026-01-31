@@ -205,7 +205,7 @@ export default function Home() {
         <Navbar />
 
         {/* Hero Section */}
-        <section className="relative w-full flex flex-col items-center justify-center min-h-screen z-10 pt-40 pb-20">
+        <section id="waitlist" className="relative w-full flex flex-col items-center justify-center min-h-screen z-10 pt-40 pb-20">
           {/* Ambient Glows with Anime.js */}
           <div
             ref={glow1Ref}
@@ -239,7 +239,6 @@ export default function Home() {
             </p>
 
             <form
-              id="waitlist"
               ref={formRef}
               className="flex flex-col sm:flex-row gap-4 w-full max-w-lg items-center relative z-20"
               onSubmit={handleSubmit}
