@@ -276,13 +276,20 @@ export default function Home() {
               </p>
             )}
 
-            <div className="mt-6 text-sm text-slate-500 flex items-center gap-2">
-              <div className="flex -space-x-2">
+            <div className="mt-8 text-sm text-slate-400 flex items-center gap-4 group">
+              <div className="flex -space-x-3 items-center">
                 {[1, 2, 3].map(i => (
-                  <div key={i} className="w-6 h-6 rounded-full bg-gradient-to-br from-slate-700 to-slate-800 border-2 border-black" />
+                  <div key={i} className="relative w-8 h-8 rounded-full border-2 border-black overflow-hidden ring-2 ring-pink-500/10 group-hover:ring-pink-500/30 transition-all duration-500">
+                    <Image
+                      src={`/assets/users/avatar${i}.png`}
+                      alt={`Creator ${i}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                 ))}
               </div>
-              <span>Join {count !== null ? (2000 + count).toLocaleString() : '2,000'}+ creators waiting</span>
+              <span className="font-medium tracking-wide">Join {count !== null ? (2000 + count).toLocaleString() : '2,000'}+ creators waiting</span>
             </div>
 
             {/* Video Preview / Phone Mockup */}
