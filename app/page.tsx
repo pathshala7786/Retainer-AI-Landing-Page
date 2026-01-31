@@ -312,7 +312,7 @@ export default function Home() {
               <div className="order-2 md:order-1 relative z-10">
                 <PhoneMockup borderColor="#ec4899">
                   <Image
-                    src="/assets/screenshots/Screenshot_20260131_134015.jpg"
+                    src="/assets/reports/Main Dashboard.jpg"
                     alt="AI Analytics Dashboard"
                     fill
                     sizes="(max-width: 768px) 100vw, 462px"
@@ -368,7 +368,7 @@ export default function Home() {
               <div className="relative z-10">
                 <PhoneMockup borderColor="#a855f7">
                   <Image
-                    src="/assets/screenshots/Screenshot_20260131_134036.jpg"
+                    src="/assets/reports/Engagement Forecast.jpg"
                     alt="Caption Generator"
                     fill
                     sizes="(max-width: 768px) 100vw, 462px"
@@ -414,24 +414,52 @@ export default function Home() {
                 <FeatureStack features={[
                   {
                     id: 1,
-                    title: "Deep Analytics",
-                    description: "Visualize your growth with precision. Track follower velocity, engagement heatmaps, and content performance scores in real-time.",
-                    icon: TrendingUp,
-                    imageSrc: "/assets/screenshots/Screenshot_20260131_133040.jpg"
+                    title: "Audit Intelligence",
+                    description: "Get real-time scoring for Viral Potential, Hook Strength, and Aesthetic Quality. Our AI dissects your content to ensure it meets the 2026 algorithm standards.",
+                    icon: ShieldCheck,
+                    imageSrc: "/assets/reports/A1.jpg"
                   },
                   {
                     id: 2,
-                    title: "Smart Captions",
-                    description: "Generate hooks that stop the scroll. Our AI analyzes millions of viral posts to craft captions tailored to your niche.",
-                    icon: MessageSquare,
-                    imageSrc: "/assets/screenshots/Screenshot_20260131_133105.jpg"
+                    title: "Strategy Framework",
+                    description: "Receive tailored platform intel and creator tips. Understand why specific 'Aesthetic POV' frameworks out-perform traditional educational content.",
+                    icon: Target,
+                    imageSrc: "/assets/reports/A2.jpg"
                   },
                   {
                     id: 3,
-                    title: "Competitor Spy",
-                    description: "See what's working for others. Monitor competitor strategies and uncover gaps in the market you can exploit.",
+                    title: "Acoustic Engine",
+                    description: "Analyze audio energy and vocal clarity. Sync your voiceover transitions perfectly to visual cues for maximum emotional impact.",
+                    icon: Zap,
+                    imageSrc: "/assets/reports/A3.jpg"
+                  },
+                  {
+                    id: 4,
+                    title: "Cinematography Analysis",
+                    description: "Optimize shot selection and color science. Transition from close-ups to wide angles to create a sense of expanding spiritual and physical space.",
+                    icon: Sparkles,
+                    imageSrc: "/assets/reports/A4.jpg"
+                  },
+                  {
+                    id: 5,
+                    title: "Smart Captions",
+                    description: "Generate viral hooks that stop the scroll. Choose from Viral, Educational, or Minimalist styles tailored for the Ramadan 2026 season.",
+                    icon: MessageSquare,
+                    imageSrc: "/assets/reports/A5.jpg"
+                  },
+                  {
+                    id: 6,
+                    title: "Hashtag Laboratory",
+                    description: "Access niche-optimized tags and identify your daily 'Viral Slot'. Post at the exact minute your audience is most likely to engage.",
+                    icon: TrendingUp,
+                    imageSrc: "/assets/reports/A6.jpg"
+                  },
+                  {
+                    id: 7,
+                    title: "Meta Strategy",
+                    description: "Double down on 'Save-Worthy' aesthetics. Plan countdown reels and series that get progressively more detailed as your event approaches.",
                     icon: BarChart2,
-                    imageSrc: "/assets/screenshots/Screenshot_20260131_132030.jpg"
+                    imageSrc: "/assets/reports/A7.jpg"
                   }
                 ]} />
               </div>
