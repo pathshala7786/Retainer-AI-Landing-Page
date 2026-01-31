@@ -460,12 +460,34 @@ export default function Home() {
                   Join the exclusive waitlist and be the first to access the future of Social Media growth.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-                  <Input placeholder="Enter your email" className="max-w-xs bg-white/10 border-white/20 !text-white !placeholder-white/40" required />
-                  <Button variant="primary" className="w-full sm:w-auto shadow-2xl shadow-pink-600/40">
-                    Get Early Access
+                <form
+                  onSubmit={handleSubmit}
+                  className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
+                >
+                  <Input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="max-w-xs bg-white/10 border-white/20 !text-white !placeholder-white/40"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    disabled={status === 'loading' || status === 'success'}
+                  />
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    className="w-full sm:w-auto shadow-2xl shadow-pink-600/40"
+                    disabled={status === 'loading' || status === 'success'}
+                  >
+                    {status === 'loading' ? 'Joining...' : status === 'success' ? 'Joined!' : 'Get Early Access'}
                   </Button>
-                </div>
+                </form>
+
+                {(status === 'success' || status === 'error') && (
+                  <p className={`mt-4 text-sm ${status === 'success' ? 'text-green-400' : 'text-rose-400'} animate-float`}>
+                    {message}
+                  </p>
+                )}
               </div>
             </div>
           </div>
