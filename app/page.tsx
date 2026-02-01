@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'Retainer AI',
     images: [
       {
-        url: '/assets/og-image.png',
+        url: '/assets/og-image.jpeg',
         width: 1200,
         height: 630,
         alt: 'Retainer AI - Social Media Analytics Platform Preview',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Retainer AI - AI-Powered Social Media Analytics',
     description: 'Unlock viral growth with AI-powered social media insights.',
-    images: ['/assets/og-image.png'],
+    images: ['/assets/og-image.jpeg'],
     creator: '@Code_Fusion_01',
   },
 };
