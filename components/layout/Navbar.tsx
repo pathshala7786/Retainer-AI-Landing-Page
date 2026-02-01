@@ -66,15 +66,16 @@ const Navbar = () => {
                         <button
                             onClick={() => setShowPricingPopup(false)}
                             className="absolute top-4 right-4 text-white/40 hover:text-white transition-colors"
+                            aria-label="Close pricing information"
                         >
                             <X size={20} />
                         </button>
 
                         <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center mb-4 text-pink-500">
-                            <span className="text-2xl">🚀</span>
+                            <span className="text-2xl" aria-hidden="true">🚀</span>
                         </div>
 
-                        <h3 className="text-xl font-bold text-white mb-2">Worth the wait.</h3>
+                        <h3 id="pricing-modal-title" className="text-xl font-bold text-white mb-2">Worth the wait.</h3>
                         <p className="text-slate-400 mb-6">
                             Pricing Soon. It&apos;s in beta testing.
                         </p>

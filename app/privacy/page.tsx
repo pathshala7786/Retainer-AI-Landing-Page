@@ -1,8 +1,15 @@
-"use client";
-
 import React from 'react';
 import Navbar from '../../components/layout/Navbar';
 import Footer from '../../components/layout/Footer';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Privacy Policy | Retainer AI',
+    description: 'Understand how Retainer AI protects your data. We collect minimal information to provide the best social media analytics experience.',
+    alternates: {
+        canonical: 'https://retainer-ai-waitlist.vercel.app/privacy',
+    }
+};
 
 export default function PrivacyPolicy() {
     return (
@@ -10,9 +17,11 @@ export default function PrivacyPolicy() {
             <Navbar />
 
             <div className="max-w-4xl mx-auto px-6 pt-40 pb-20">
-                <h1 className="text-4xl md:text-5xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/50">
-                    Privacy Policy
-                </h1>
+                <header>
+                    <h1 className="text-4xl md:text-5xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/50">
+                        Privacy Policy
+                    </h1>
+                </header>
 
                 <div className="space-y-8 text-slate-400 leading-relaxed">
                     <section>

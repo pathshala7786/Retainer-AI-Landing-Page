@@ -92,7 +92,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <script
           type="application/ld+json"
@@ -119,6 +119,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${plusJakartaSans.variable} ${teko.variable} antialiased`}>
+        <a href="#main-content" className="skip-to-content">
+          Skip to main content
+        </a>
         {children}
         <Analytics />
         <SpeedInsights />
