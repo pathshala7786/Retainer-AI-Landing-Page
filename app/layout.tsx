@@ -19,12 +19,12 @@ const teko = Teko({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://retainer-ai-waitlist.vercel.app'),
+  metadataBase: new URL('https://retainer-ai-eta.vercel.app'),
   title: {
     default: 'Retainer AI - AI-Powered Social Media Analytics for Creators',
     template: '%s | Retainer AI'
   },
-  description: 'Transform your social media strategy with AI-powered analytics. Get data-driven insights, automated captions, and performance tracking for Instagram, TikTok, and more. Join 2,006+ creators.',
+  description: 'Transform your social media strategy with AI-powered analytics. Get data-driven insights, automated captions, and performance tracking for Instagram, TikTok, and more.',
   keywords: [
     'social media analytics',
     'AI captions',
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://retainer-ai-waitlist.vercel.app',
+    url: 'https://retainer-ai-eta.vercel.app',
     title: 'Retainer AI - AI-Powered Social Media Analytics',
-    description: 'Transform your social media strategy with AI-powered analytics and automated captions. Join 2,006+ creators already using Retainer AI.',
+    description: 'Transform your social media strategy with AI-powered analytics and automated captions.',
     siteName: 'Retainer AI',
     images: [{
       url: '/assets/og-image.png',

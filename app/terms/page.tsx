@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     title: 'Terms of Service | Retainer AI',
     description: 'Read our terms of service and acceptance guidelines for using Retainer AI social media analytics and caption tools.',
     alternates: {
-        canonical: 'https://retainer-ai-waitlist.vercel.app/terms',
+        canonical: 'https://retainer-ai-eta.vercel.app/terms',
     }
 };
 
@@ -36,15 +36,15 @@ export default function TermsOfService() {
                         <h2 className="text-xl font-semibold text-white mb-4">2. Description of Service</h2>
                         <p>
                             Retainer AI provides AI-powered analysis for social media profiles and caption generation tools.
-                            The service is currently in early access/waitlist stage.
+                            The service is available for creators who want to drive engagement through data.
                         </p>
                     </section>
 
                     <section>
-                        <h2 className="text-xl font-semibold text-white mb-4">3. Waitlist Registration</h2>
+                        <h2 className="text-xl font-semibold text-white mb-4">3. User Registration</h2>
                         <p>
-                            Registration for the waitlist does not guarantee access to the service or any specific
-                            pricing tier. Access is granted at our sole discretion.
+                            Registration for the service may be subject to vetting or specific
+                            pricing tiers. Access is granted according to our current service levels.
                         </p>
                     </section>
 
@@ -67,6 +67,6 @@ export default function TermsOfService() {
             </div>
 
             <Footer />
-        </main>
+        </main >
     );
 }

@@ -9,62 +9,19 @@ import Input from '../components/ui/Input';
 import PhoneMockup from '../components/ui/PhoneMockup';
 import FeatureStack from '../components/ui/FeatureStack';
 import Image from 'next/image';
-import { ArrowRight, BarChart2, MessageSquare, TrendingUp, Sparkles, CheckCircle2, Zap, Target, Users, Wand2, ShieldCheck, Library } from 'lucide-react';
+import { ArrowRight, BarChart2, MessageSquare, TrendingUp, Sparkles, CheckCircle2, Zap, Target, Wand2, ShieldCheck, Library, Heart } from 'lucide-react';
+import Pricing from '../components/sections/Pricing';
 
 export default function HomeClient() {
     const titleRef = useRef<HTMLHeadingElement>(null);
     const descRef = useRef<HTMLParagraphElement>(null);
-    const formRef = useRef<HTMLFormElement>(null);
-    const buttonRef = useRef<HTMLButtonElement>(null);
+    const formRef = useRef<HTMLDivElement>(null);
+    const buttonRef = useRef<HTMLAnchorElement>(null);
     const glow1Ref = useRef<HTMLDivElement>(null);
     const glow2Ref = useRef<HTMLDivElement>(null);
 
-    const [email, setEmail] = useState('');
-    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-    const [message, setMessage] = useState('');
-    const [count, setCount] = useState<number | null>(null);
-
-    useEffect(() => {
-        // Fetch initial count
-        fetch('/api/waitlist')
-            .then(res => res.json())
-            .then(data => {
-                if (data.count !== undefined) setCount(data.count);
-            })
-            .catch(err => console.error('Error fetching count:', err));
-    }, []);
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setStatus('loading');
-        setMessage('');
-
-        try {
-            const res = await fetch('/api/waitlist', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email }),
-            });
-
-            const data = await res.json();
-
-            if (res.ok) {
-                setStatus('success');
-                setMessage('You\'re on the list! Check your inbox soon.');
-                setEmail('');
-                // Refresh count
-                const countRes = await fetch('/api/waitlist');
-                const countData = await countRes.json();
-                if (countData.count !== undefined) setCount(countData.count);
-            } else {
-                setStatus('error');
-                setMessage(data.error || 'Something went wrong. Please try again.');
-            }
-        } catch (err) {
-            setStatus('error');
-            setMessage('Network error. Please try again.');
-        }
-    };
+    // No longer needed
+    const count = 2015;
 
     useEffect(() => {
         // 1. Hero Staggered Entrance Animation
@@ -164,7 +121,7 @@ export default function HomeClient() {
         }
     }, []);
 
-    const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
         if (!buttonRef.current) return;
 
         const btn = buttonRef.current;
@@ -237,58 +194,27 @@ export default function HomeClient() {
 
                         <div id="waitlist" className="scroll-mt-32" />
 
-                        <form
-                            id="waitlist-form"
-                            ref={formRef}
-                            className="flex flex-col sm:flex-row gap-4 w-full max-w-lg items-center relative z-20"
-                            onSubmit={handleSubmit}
-                            style={{ opacity: 0 }}
-                            aria-label="Waitlist signup form"
-                        >
-                            <div className="relative flex-1 w-full">
-                                <Input
-                                    type="email"
-                                    placeholder="Enter your email"
-                                    required
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    disabled={status === 'loading' || status === 'success'}
-                                    aria-label="Email address"
-                                />
-                            </div>
-                            <button
-                                ref={buttonRef}
-                                type="submit"
-                                className="btn-primary whitespace-nowrap w-full sm:w-auto disabled:opacity-50"
-                                disabled={status === 'loading' || status === 'success'}
+                        <div className="flex flex-col items-center relative z-20" style={{ opacity: 0 }} ref={formRef}>
+                            <a
+                                href="https://retainer-ai-eta.vercel.app/"
+                                className="btn-primary w-full sm:w-auto px-8 py-4 text-xl"
+                                ref={buttonRef as any}
                                 onMouseMove={handleMouseMove}
                                 onMouseLeave={handleMouseLeave}
                             >
-                                {status === 'loading' ? 'Joining...' : status === 'success' ? 'Joined!' : 'Join Waitlist'}
-                            </button>
-                        </form>
+                                Get Started
+                            </a>
+                        </div>
 
-                        {(status === 'success' || status === 'error') && (
+                        {/* {(status === 'success' || status === 'error') && (
                             <p className={`mt-4 text-sm ${status === 'success' ? 'text-green-400' : 'text-rose-400'} animate-float`} aria-live="polite">
                                 {message}
                             </p>
-                        )}
-
-                        <div className="mt-8 text-sm text-slate-400 flex flex-col items-center gap-3 group">
-                            <div className="flex -space-x-3 items-center">
-                                {[1, 2, 3, 4, 5, 6, 7].map(i => (
-                                    <div key={i} className="relative w-8 h-8 rounded-full border-2 border-black overflow-hidden ring-2 ring-pink-500/10 group-hover:ring-pink-500/30 transition-all duration-500">
-                                        <Image
-                                            src={`/assets/users/avatar${i}.png`}
-                                            alt={`Happy content creator ${i}`}
-                                            fill
-                                            sizes="32px"
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                            <span className="font-medium tracking-wide">{count !== null ? (2006 + count).toLocaleString() : '2,006'}+ Creators Already In</span>
+                        )} */}
+                        <div className="mt-8 flex items-center justify-center gap-2 text-slate-400 text-sm font-medium tracking-wide animate-fade-in">
+                            <span>Made with</span>
+                            <Heart className="w-4 h-4 text-pink-500 fill-pink-500 animate-pulse" />
+                            <span>for Creators</span>
                         </div>
 
                         {/* Hero Mockup */}
@@ -458,6 +384,9 @@ export default function HomeClient() {
                     </div>
                 </section>
 
+                {/* Pricing Section */}
+                <Pricing />
+
                 {/* Final CTA Section */}
                 <section id="cta" className="py-32 relative overflow-hidden" aria-labelledby="cta-heading">
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-pink-900/20" aria-hidden="true" />
@@ -475,39 +404,23 @@ export default function HomeClient() {
                                     Ready to dominate <br /> your niche?
                                 </h2>
                                 <p className="text-xl text-slate-300 max-w-xl mx-auto">
-                                    Join the exclusive waitlist and be the first to access the future of Social Media growth tools.
+                                    Get instant access to the future of Social Media growth tools.
                                 </p>
 
-                                <form
-                                    onSubmit={handleSubmit}
-                                    className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
-                                    aria-label="Footer CTA waitlist form"
-                                >
-                                    <Input
-                                        type="email"
-                                        placeholder="Enter your email"
-                                        className="max-w-xs bg-white/10 border-white/20 !text-white !placeholder-white/40"
-                                        required
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        disabled={status === 'loading' || status === 'success'}
-                                        aria-label="Email address for early access"
-                                    />
-                                    <Button
-                                        type="submit"
-                                        variant="primary"
-                                        className="w-full sm:w-auto shadow-2xl shadow-pink-600/40"
-                                        disabled={status === 'loading' || status === 'success'}
+                                <div className="flex justify-center pt-8">
+                                    <a
+                                        href="https://retainer-ai-eta.vercel.app/"
+                                        className="btn-primary w-full sm:w-auto px-8 py-4 text-xl shadow-2xl shadow-pink-600/40"
                                     >
-                                        {status === 'loading' ? 'Joining...' : status === 'success' ? 'Joined!' : 'Get Early Access'}
-                                    </Button>
-                                </form>
+                                        Get Early Access
+                                    </a>
+                                </div>
 
-                                {(status === 'success' || status === 'error') && (
+                                {/* {(status === 'success' || status === 'error') && (
                                     <p className={`mt-4 text-sm ${status === 'success' ? 'text-green-400' : 'text-rose-400'} animate-float`} aria-live="polite">
                                         {message}
                                     </p>
-                                )}
+                                )} */}
                             </div>
                         </div>
                     </div>

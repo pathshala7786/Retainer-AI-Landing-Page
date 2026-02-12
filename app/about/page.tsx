@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: 'About Us | Retainer AI',
     description: 'Learn about our mission to democratize data science for content creators and how our AI-powered analytics drive social media growth.',
     alternates: {
-        canonical: 'https://retainer-ai-waitlist.vercel.app/about',
+        canonical: 'https://retainer-ai-eta.vercel.app/about',
     }
 };
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     title: 'Privacy Policy | Retainer AI',
     description: 'Understand how Retainer AI protects your data. We collect minimal information to provide the best social media analytics experience.',
     alternates: {
-        canonical: 'https://retainer-ai-waitlist.vercel.app/privacy',
+        canonical: 'https://retainer-ai-eta.vercel.app/privacy',
     }
 };
 
@@ -36,15 +36,15 @@ export default function PrivacyPolicy() {
                     <section>
                         <h2 className="text-xl font-semibold text-white mb-4">2. Data We Collect</h2>
                         <p>
-                            When you join our waitlist, we only collect your email address. This information is used solely to
-                            keep you updated on our progress and notify you when early access becomes available.
+                            When you join our community or use our services, we only collect minimal data required (like your email address). This information is used solely to
+                            provide the best social media analytics experience and keep you updated on new features.
                         </p>
                     </section>
 
                     <section>
                         <h2 className="text-xl font-semibold text-white mb-4">3. How We Use Your Data</h2>
                         <p>
-                            We will only use your personal data for the purpose for which we collected it (Waitlist registration).
+                            We will only use your personal data for the purpose for which we collected it.
                             We do not sell your personal data to third parties.
                         </p>
                     </section>
